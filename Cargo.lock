@@ -189,7 +189,6 @@ dependencies = [
 [[package]]
 name = "keyberon"
 version = "0.1.0"
-source = "git+https://github.com/TeXitoi/keyberon#6b485e10cb5439c682323f75f90ef7852e295e69"
 dependencies = [
  "arraydeque",
  "either",

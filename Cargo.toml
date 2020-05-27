@@ -7,7 +7,7 @@ edition = "2018"
 [dependencies]
 generic-array = "0.13"
 panic-semihosting = "0.5"
-keyberon = { git = "https://github.com/TeXitoi/keyberon" }
+keyberon = { version = "0.1", path = "./keyberon" }
 embedded-hal = "0.2"
 stm32f1xx-hal = { version = "0.5", features = ["rt", "stm32f103", "stm32-usbd"] }
 usb-device = "0.2"
