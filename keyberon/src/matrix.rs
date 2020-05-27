@@ -1,5 +1,5 @@
 use embedded_hal::digital::v2::{InputPin, OutputPin};
-use generic_array::{ArrayLength, GenericArray};
+use generic_array::{ArrayLength, GenericArray, typenum::Unsigned};
 use heapless::Vec;
 
 pub trait HeterogenousArray {
@@ -80,7 +80,9 @@ impl<C, R> Matrix<C, R> {
                     .collect::<Result<Vec<_, C::Len>, E>>()?
                     .into_iter()
                     .collect();
-                r.set_high()?;
+                if <R::Len as Unsigned>::USIZE > 1 {
+                    r.set_high()?;
+                }
                 Ok(col)
             })
             .collect::<Result<Vec<_, R::Len>, E>>()
